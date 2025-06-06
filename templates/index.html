@@ -10,7 +10,8 @@
         <label>Coinsurance %: <input type="number" name="coinsurance" value="10"></label><br>
         <label>Remaining Deductible: <input type="number" name="deductible" value="0"></label><br>
         <label>Balance: <input type="number" name="balance" value="0"></label><br><br>
-        {% for code, (name, charge) in services.items() %}
+        {% for code, (name, charge) in cpt_map.items() %}
+
             <fieldset>
                 <legend>{{ name }} ({{ code }}) - ${{ charge }}</legend>
                 <label><input type="checkbox" name="deductible_{{ code }}"> Deductible</label>
