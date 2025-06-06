@@ -1,0 +1,10 @@
+{
+  "admin_password": "admin123",
+  "cpt_map": {
+    "99204": ["Initial visit", 200],
+    "99214": ["Follow up visit", 150],
+    "43239": ["EGD", 600],
+    "45380": ["Colonoscopy", 700],
+    "46221": ["Hemorrhoid banding", 350]
+  }
+}

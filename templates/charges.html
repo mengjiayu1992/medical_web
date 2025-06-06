@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modify Charges</title>
+</head>
+<body>
+    <h1>Modify Procedure Charges</h1>
+    <form method="POST">
+        {% for code, (name, charge) in services.items() %}
+            <label>{{ name }} ({{ code }}): <input type="number" step="0.01" name="{{ code }}" value="{{ charge }}"></label><br>
+        {% endfor %}
+        <button type="submit">Save</button>
+    </form>
+    <a href="/">Back</a>
+</body>
+</html>

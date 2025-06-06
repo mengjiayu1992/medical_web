@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Medical Billing Calculator</title>
+</head>
+<body>
+    <h1>Medical Billing Calculator</h1>
+    <form method="POST" action="/calculate">
+        <label>Coinsurance %: <input type="number" name="coinsurance" value="10"></label><br>
+        <label>Remaining Deductible: <input type="number" name="deductible" value="0"></label><br>
+        <label>Balance: <input type="number" name="balance" value="0"></label><br><br>
+        {% for code, (name, charge) in services.items() %}
+            <fieldset>
+                <legend>{{ name }} ({{ code }}) - ${{ charge }}</legend>
+                <label><input type="checkbox" name="deductible_{{ code }}"> Deductible</label>
+                <label><input type="checkbox" name="coinsurance_{{ code }}"> Coinsurance</label>
+                <label><input type="checkbox" name="copay_{{ code }}"> Copay</label>
+                <label><input type="checkbox" name="today_{{ code }}"> Today</label>
+            </fieldset>
+        {% endfor %}
+        <br><button type="submit">Calculate</button>
+    </form>
+    <br><a href="/admin">Admin Login</a>
+</body>
+</html>
