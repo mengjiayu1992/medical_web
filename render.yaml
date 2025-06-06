@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: medical-web
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python app.py"
+    repo: https://github.com/mengjiayu1992/medical_web
+    branch: main
+    autoDeploy: true
